@@ -1,0 +1,403 @@
+The number of rows:  6567
+The number of columns:  9
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 6567 entries, 2022-07-25 to 2015-07-27
+Data columns (total 13 columns):
+ #   Column                   Non-Null Count  Dtype
+---  ------                   --------------  -----
+ 0   Transaction Number       6567 non-null   int64
+ 1   Transaction Type         6567 non-null   object
+ 2   Transaction Description  6567 non-null   object
+ 3   Debit Amount             6567 non-null   float64
+ 4   Credit Amount            6567 non-null   float64
+ 5   Balance                  6567 non-null   float64
+ 6   Category                 6567 non-null   object
+ 7   Location City            6567 non-null   object
+ 8   Location Country         6567 non-null   object
+ 9   Year                     6567 non-null   int64
+ 10  Month                    6567 non-null   int64
+ 11  Day                      6567 non-null   int64
+ 12  WeekOfYear               6567 non-null   UInt32
+dtypes: UInt32(1), float64(3), int64(4), object(5)
+memory usage: 570.8+ KB
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =            7     M =           10
+ This problem is unconstrained.
+
+At X0         0 variables are exactly at the bounds
+
+At iterate    0    f=  7.68831D+00    |proj g|=  7.46913D-01
+
+At iterate    5    f=  7.44104D+00    |proj g|=  3.63908D-01
+
+At iterate   10    f=  7.43402D+00    |proj g|=  6.54123D-02
+
+At iterate   15    f=  7.43179D+00    |proj g|=  4.89050D-01
+
+At iterate   20    f=  7.43143D+00    |proj g|=  3.57521D-02
+
+At iterate   25    f=  7.43128D+00    |proj g|=  6.81678D-02
+
+At iterate   30    f=  7.43107D+00    |proj g|=  7.37574D-02
+
+At iterate   35    f=  7.42793D+00    |proj g|=  1.40709D-01
+
+At iterate   40    f=  7.42772D+00    |proj g|=  3.29042D-03
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+    7     44     56      1     0     0   3.275D-04   7.428D+00
+  F =   7.4277083545940279
+
+CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =           57     M =           10
+ This problem is unconstrained.
+
+At X0         0 variables are exactly at the bounds
+
+At iterate    0    f=  7.95665D+00    |proj g|=  3.84510D-01
+
+At iterate    5    f=  7.85594D+00    |proj g|=  2.73622D-02
+
+At iterate   10    f=  7.85434D+00    |proj g|=  9.70462D-03
+
+At iterate   15    f=  7.85405D+00    |proj g|=  1.75524D-03
+
+At iterate   20    f=  7.85405D+00    |proj g|=  6.49058D-04
+
+At iterate   25    f=  7.85395D+00    |proj g|=  8.41865D-03
+
+At iterate   30    f=  7.84863D+00    |proj g|=  4.12359D-02
+
+At iterate   35    f=  7.82303D+00    |proj g|=  2.92553D-02
+
+At iterate   40    f=  7.82118D+00    |proj g|=  3.05235D-02
+
+At iterate   45    f=  7.82099D+00    |proj g|=  3.47286D-04
+
+At iterate   50    f=  7.82098D+00    |proj g|=  2.40967D-03
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+   57     50     60      1     0     0   2.410D-03   7.821D+00
+  F =   7.8209849185412139
+
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT
+Help on module transactions:
+
+NAME
+    transactions - This is a Dash dashboard for modelling and visualizing transaction data.
+
+FUNCTIONS
+    calculate_forecasts(selected_year, date_range)
+        Calculate balance forecasts for a given year and date range using a SARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to calculate forecasts.
+        - date_range (tuple): The range of months for which to make forecasts (e.g., (1, 12)).
+
+        Returns:
+        - pd.DataFrame: Forecasted balance values with date, predicted, lower CI, and upper CI columns.
+
+    calculate_residuals(selected_year)
+        Calculate residuals for a given year using an ARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to calculate residuals.
+
+        Returns:
+        - pd.Series: Residual values.
+
+    calculate_residuals_arima(selected_year)
+        Calculate residuals for a given year using an ARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to calculate residuals.
+
+        Returns:
+        - pd.Series: Residual values.
+
+    calculate_residuals_sarima(selected_year)
+        Calculate residuals for a given year using a SARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to calculate residuals.
+
+        Returns:
+        - pd.Series: Residual values.
+
+    calculate_residuals_sarimax(selected_year)
+        Calculate residuals for a given year using a SARIMAX model.
+
+        Parameters:
+        - selected_year (int): The year for which to calculate residuals.
+
+        Returns:
+        - pd.Series: Residual values.
+
+    calculate_rmse(selected_year, model_order)
+        Calculate the Root Mean Squared Error (RMSE) for the ARIMA model with the specified model_order.
+
+        Args:
+            selected_year (int): The year for which to calculate RMSE.
+            model_order (tuple): The order of the ARIMA model.
+
+        Returns:
+            float: The RMSE value.
+
+    calculate_rmse_sarima(selected_year, model_order, seasonal_order)
+        Calculate the RMSE for the SARIMA model with the specified model_order and seasonal_order.
+
+        Args:
+            selected_year (int): The year for which to calculate RMSE.
+            model_order (tuple): The order of the SARIMA model.
+            seasonal_order (tuple): The seasonal order of the SARIMA model.
+
+        Returns:
+            float: The RMSE value.
+
+    calculate_rmse_sarimax(selected_year, model_order, seasonal_order)
+        Calculate the RMSE for the SARIMAX model with the specified model_order, seasonal_order, and exogenous variables.
+
+        Args:
+            selected_year (int): The year for which to calculate RMSE.
+            model_order (tuple): The order of the SARIMAX model.
+            seasonal_order (tuple): The seasonal order of the SARIMAX model.
+            exog_vars (DataFrame): Exogenous variables used in the model.
+
+        Returns:
+            float: The RMSE value.
+
+    predict_arima(selected_year)
+        Predict balance values for a given year using an ARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to make predictions.
+
+        Returns:
+        - pd.Series: Predicted balance values.
+
+    predict_sarima(selected_year)
+        Predict balance values for a given year using a SARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to make predictions.
+
+        Returns:
+        - pd.Series: Predicted balance values.
+
+    predict_sarimax(selected_year)
+        Predict balance values for a given year using a SARIMAX model.
+
+        Parameters:
+        - selected_year (int): The year for which to make predictions.
+
+        Returns:
+        - pd.Series: Predicted balance values.
+
+    predict_values(selected_year)
+        Predict balance values for a given year using an ARIMA model.
+
+        Parameters:
+        - selected_year (int): The year for which to make predictions.
+
+        Returns:
+        - pd.Series: Predicted balance values.
+
+    sqrt(x, /)
+        Return the square root of x.
+
+    update_average_balance_heatmap(selected_year)
+        Update the average balance heatmap based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average balance heatmap.
+
+    update_average_balance_over_country(selected_year)
+        Update the average balance over country plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average balance over country plot.
+
+    update_average_balance_over_time(selected_year)
+        Update the average balance over time plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average balance over time plot.
+
+    update_average_balance_plot(selected_year)
+        Update the average balance plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average balance plot.
+
+    update_average_balance_year_plot(selected_year)
+        Update the average balance by year plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average balance by year plot.
+
+    update_average_weekly_balance(selected_year)
+        Update the average weekly balance time series plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated average weekly balance time series plot.
+
+    update_category_debit_amount(selected_year)
+        Update the category debit amount grouped bar chart based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated category debit amount grouped bar chart.
+
+    update_correlation(selected_year)
+        Update the correlation heatmap based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated correlation heatmap.
+
+    update_ecdf_plot(selected_year)
+        Update the ECDF plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated ECDF plot.
+
+    update_forecast_plot(selected_year, date_range)
+        Update the forecast plot based on the selected year and date range.
+
+        Parameters:
+        - selected_year (int): The selected year for analysis.
+        - date_range (list): The selected date range [start_month, end_month].
+
+        Returns:
+        - forecast_plot_fig (plotly.graph_objects.Figure): Forecast plot with shaded regions.
+
+    update_line_chart(selected_year)
+        Update the line chart based on the selected year.
+
+        Parameters:
+        - selected_year (int): The selected year for analysis.
+
+        Returns:
+        - line_chart_fig (plotly.graph_objects.Figure): Line chart showing actual and predicted values.
+
+    update_metrics(selected_year)
+        Calculate and update key metrics and model comparison chart.
+
+        Parameters:
+        - selected_year (int): The selected year for analysis.
+
+        Returns:
+        - key_metrics (list): List of key metric values.
+        - model_comparison_fig (plotly.graph_objects.Figure): Model comparison chart.
+
+    update_residual_plots(selected_year)
+        Update the residual analysis plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated residual analysis plot.
+
+    update_transaction_hierarchy(selected_year)
+        Update the transaction hierarchy sunburst chart based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated transaction hierarchy sunburst chart.
+
+    update_trend_balance_plot(selected_year)
+        Update the trend balance plot based on the selected year.
+
+        Parameters:
+        - selected_year (int): The year for which to update the plot.
+
+        Returns:
+        - go.Figure: The updated trend balance plot.
+
+DATA
+    __warningregistry__ = {'version': 180}
+    app = <dash.dash.Dash object>
+    fig = Figure({
+        'data': [{'mode': 'lines',
+            ...      'yaxis'...
+    filtered_data =                   Transaction Number Transaction...17 ...
+    forecasts_arima = 753     18620.304033
+    754     18559.472982
+    755   ...N...
+    forecasts_sarima = 753     18651.600085
+    754     18631.800484
+    755   ......
+    forecasts_sarimax = 753     18926.966347
+    754     17709.318637
+    755   .....
+    i = 752
+    mode_category = 'Savings'
+    mode_city = 'Swansea'
+    mode_country = 'UK'
+    mode_type = 'DEB'
+    selected_year = 2017
+    transaction =                   Transaction Number Transaction...5    ...
+
+FILE
+    c:\users\hp\downloads\transactions.py
