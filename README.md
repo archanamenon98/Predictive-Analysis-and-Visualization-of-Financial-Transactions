@@ -34,6 +34,6 @@ In the contemporary and dynamic realm of finance, both individuals and financial
 
 ## Documentation
 
-Detailed documentation and usage instructions can be found in the [docs](docs/) directory.
+Detailed documentation and usage instructions can be found in the repository.
 
 
